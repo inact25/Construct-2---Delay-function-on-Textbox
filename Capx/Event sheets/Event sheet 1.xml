@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable comment="You can change number with whatever you want" constant="0" name="Delay" sid="435907050574543" static="0" type="number">2</variable>
+        <variable constant="0" name="Timer" sid="480285775562676" static="0" type="number">-99</variable>
+        <event-block sid="234404227173131">
+            <conditions />
+            <actions>
+                <action id="0" name="Set text" sid="140277937465861" type="Delay">
+                    <param id="0" name="Text">&quot;Delay :&quot; &amp;Timer&amp;&quot; second&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="925630178043571">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="924440401768306" type="System" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="358225113832341" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="177741651906496">
+            <conditions>
+                <condition id="1" name="On text changed" sid="670732664290990" type="iniTextbox" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="187280248179795" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">Delay</param>
+                </action>
+                <action id="0" name="Set text" sid="566370452194204" type="Status">
+                    <param id="0" name="Text">&quot;Status : Typing&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="753469537917041">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="385870399245673" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="529973051006347" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="155633028333595">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="880593807216784" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition id="-4" name="Trigger once while true" sid="148782060548580" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="948284352184101" type="Status">
+                    <param id="0" name="Text">&quot;Status : Idle&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
